@@ -14,7 +14,7 @@ function CheckAuth({ isAuthenticated, user, children }: CheckAuthProps) {
 
   if (location.pathname === '/') {
     if (!isAuthenticated) {
-      return <Navigate to="/auth/login" />;
+      return <Navigate to="/login" />;
     } else {
       return (
         <Navigate to={`workspace/${user.currentWorkspace?._id}`} replace />
@@ -29,7 +29,7 @@ function CheckAuth({ isAuthenticated, user, children }: CheckAuthProps) {
       location.pathname.includes('/register')
     )
   ) {
-    return <Navigate to="/auth/login" />;
+    return <Navigate to="/login" />;
   }
 
   if (
